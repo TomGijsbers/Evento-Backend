@@ -265,30 +265,25 @@ public static class DbInitializer
         // Event Registrations - showing active participation patterns
         var registrations = new List<EventRegistration>
         {
-            // Past events with many attendees
+            
             new EventRegistration { UserId = users[0].Id, EventId = events[5].Id, RegisteredAt = now.AddDays(-30) },
             new EventRegistration { UserId = users[1].Id, EventId = events[5].Id, RegisteredAt = now.AddDays(-29) },
             new EventRegistration { UserId = users[2].Id, EventId = events[5].Id, RegisteredAt = now.AddDays(-28) },
             new EventRegistration { UserId = users[4].Id, EventId = events[5].Id, RegisteredAt = now.AddDays(-27) },
             new EventRegistration { UserId = users[7].Id, EventId = events[5].Id, RegisteredAt = now.AddDays(-25) },
-
             new EventRegistration { UserId = users[3].Id, EventId = events[7].Id, RegisteredAt = now.AddDays(-15) },
             new EventRegistration { UserId = users[5].Id, EventId = events[7].Id, RegisteredAt = now.AddDays(-14) },
             new EventRegistration { UserId = users[9].Id, EventId = events[7].Id, RegisteredAt = now.AddDays(-13) },
-
             new EventRegistration { UserId = users[2].Id, EventId = events[9].Id, RegisteredAt = now.AddDays(-40) },
             new EventRegistration { UserId = users[6].Id, EventId = events[9].Id, RegisteredAt = now.AddDays(-38) },
             new EventRegistration { UserId = users[8].Id, EventId = events[9].Id, RegisteredAt = now.AddDays(-35) },
             new EventRegistration { UserId = users[10].Id, EventId = events[9].Id, RegisteredAt = now.AddDays(-32) },
-
-            // Current & upcoming popular events
             new EventRegistration { UserId = users[0].Id, EventId = events[0].Id, RegisteredAt = now.AddHours(-72) },
             new EventRegistration { UserId = users[2].Id, EventId = events[0].Id, RegisteredAt = now.AddHours(-65) },
             new EventRegistration { UserId = users[4].Id, EventId = events[0].Id, RegisteredAt = now.AddHours(-60) },
             new EventRegistration { UserId = users[6].Id, EventId = events[0].Id, RegisteredAt = now.AddHours(-48) },
             new EventRegistration { UserId = users[8].Id, EventId = events[0].Id, RegisteredAt = now.AddHours(-24) },
             new EventRegistration { UserId = users[10].Id, EventId = events[0].Id, RegisteredAt = now.AddHours(-12) },
-
             new EventRegistration { UserId = users[1].Id, EventId = events[1].Id, RegisteredAt = now.AddHours(-100) },
             new EventRegistration { UserId = users[3].Id, EventId = events[1].Id, RegisteredAt = now.AddHours(-90) },
             new EventRegistration { UserId = users[5].Id, EventId = events[1].Id, RegisteredAt = now.AddHours(-80) },
@@ -302,7 +297,7 @@ public static class DbInitializer
             new EventRegistration { UserId = users[3].Id, EventId = events[3].Id, RegisteredAt = now.AddMinutes(-25) },
             new EventRegistration { UserId = users[9].Id, EventId = events[3].Id, RegisteredAt = now.AddMinutes(-20) },
 
-            // Less popular but still attended events
+            
             new EventRegistration { UserId = users[1].Id, EventId = events[4].Id, RegisteredAt = now.AddMinutes(-15) },
             new EventRegistration { UserId = users[5].Id, EventId = events[4].Id, RegisteredAt = now.AddMinutes(-10) },
 
@@ -312,7 +307,7 @@ public static class DbInitializer
             new EventRegistration { UserId = users[7].Id, EventId = events[8].Id, RegisteredAt = now.AddDays(-1) },
             new EventRegistration { UserId = users[11].Id, EventId = events[8].Id, RegisteredAt = now.AddHours(-20) },
 
-            // Most recent registrations
+            
             new EventRegistration { UserId = users[0].Id, EventId = events[11].Id, RegisteredAt = now.AddMinutes(-5) },
             new EventRegistration { UserId = users[10].Id, EventId = events[11].Id, RegisteredAt = now.AddMinutes(-3) },
             new EventRegistration { UserId = users[5].Id, EventId = events[11].Id, RegisteredAt = now.AddMinutes(-1) }

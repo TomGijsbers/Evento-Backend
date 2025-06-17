@@ -125,3 +125,4 @@ C:\School\AngularBackend\Dotnet\WebApplication3\bin\Debug\net8.0\runtimes\win\li
 C:\School\AngularBackend\Dotnet\WebApplication3\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\School\AngularBackend\Dotnet\WebApplication3\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\School\AngularBackend\Dotnet\WebApplication3\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\School\AngularBackend\Dotnet\WebApplication3\obj\Debug\net8.0\WebApplication3.sourcelink.json
