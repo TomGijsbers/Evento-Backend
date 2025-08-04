@@ -72,6 +72,18 @@ public class Program
                 policy.RequireClaim("permissions", "read:profile:own"));
                 
             
+            options.AddPolicy("CanReadGroups", policy =>
+                policy.RequireClaim("permissions", "CanReadGroups"));
+
+            options.AddPolicy("CanCreateGroups", policy =>
+                policy.RequireClaim("permissions", "CanCreateGroups"));
+
+            options.AddPolicy("CanUpdateGroups", policy =>
+                policy.RequireClaim("permissions", "CanUpdateGroups"));
+
+            options.AddPolicy("CanDeleteGroups", policy =>
+                policy.RequireClaim("permissions", "CanDeleteGroups"));
+            
                 
         });        
         
