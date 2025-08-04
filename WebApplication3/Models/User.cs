@@ -8,5 +8,7 @@ public class User
     public string Auth0Id { get; set; } // bv. "auth0|abc123"
     public string Email { get; set; }
     public ICollection<EventRegistration> EventRegistrations { get; set; } = new List<EventRegistration>();
+    
+    public ICollection<UserGroup> UserGroups { get; set; } = new List<UserGroup>();
 }
 

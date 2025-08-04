@@ -18,6 +18,9 @@ public class ApplicationDbContext : DbContext
     
     public DbSet<EventFeedback> EventFeedbacks { get; set; } 
     
+    public DbSet<Group> Groups { get; set; }
+    public DbSet<UserGroup> UserGroups { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder); // Roep de basis implementatie aan.
@@ -38,6 +41,20 @@ public class ApplicationDbContext : DbContext
             .HasOne(f => f.User)
             .WithMany()
             .HasForeignKey(f => f.UserId);
+        
+        modelBuilder.Entity<UserGroup>()
+            .HasKey(ug => new { ug.UserId, ug.GroupId });
+        
+        modelBuilder.Entity<UserGroup>()
+            .HasOne(ug => ug.User)
+            .WithMany(u => u.UserGroups)
+            .HasForeignKey(ug => ug.UserId);
+        
+        modelBuilder.Entity<UserGroup>()
+            .HasOne(ug => ug.Group)
+            .WithMany(g => g.UserGroups)
+            .HasForeignKey(ug => ug.GroupId);
+        
         
           // ╭──── Unique sleutel: 1 inschrijving pp event+user ───╮
           // Configureert een samengestelde unieke sleutel voor EventRegistration.
