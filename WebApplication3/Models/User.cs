@@ -9,7 +9,6 @@ public class User
     public string Email { get; set; }
     public ICollection<EventRegistration> EventRegistrations { get; set; } = new List<EventRegistration>();
     
-    // Add this to your User class
     public ICollection<UserGroup> UserGroups { get; set; } = new List<UserGroup>();
 }
 
