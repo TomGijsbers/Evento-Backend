@@ -472,6 +472,100 @@ public static class DbInitializer
 
 
         context.EventFeedbacks.AddRange(feedback);
+        
+        // Groups
+var groups = new List<Group>
+{
+    new Group
+    {
+        Name = "Bakfiets Bende",
+        Description = "Professionele fietsdieven met een voorkeur voor bakfietsen"
+    },
+    new Group
+    {
+        Name = "Snorren Club Nederland",
+        Description = "Vereniging voor snorrenliefhebbers en vermommingsexperts"
+    },
+    new Group
+    {
+        Name = "Mysterieuze Fijnproevers",
+        Description = "Culinaire avonturiers die van dubieuze delicatessen houden"
+    },
+    new Group
+    {
+        Name = "Nachtelijke Kaasrollers",
+        Description = "Extreme sporters die van kaas en hellingen houden"
+    },
+    new Group
+    {
+        Name = "Geheime Agenten Vereniging",
+        Description = "Voor mensen die van codes, vermommingen en mysterie houden"
+    },
+    new Group
+    {
+        Name = "Creatieve Chaos Club",
+        Description = "Voor mensen met bizarre ideeën en een hang naar het absurde"
+    }
+};
+
+context.Groups.AddRange(groups);
+context.SaveChanges();
+
+// UserGroups - assigning users to groups with varying admin statuses
+        var userGroups = new List<UserGroup>
+        {
+            // Bakfiets Bende
+            new UserGroup
+                { UserId = users[0].Id, GroupId = groups[0].Id, IsAdmin = true, JoinedAt = now.AddMonths(-6) },
+            new UserGroup
+                { UserId = users[4].Id, GroupId = groups[0].Id, IsAdmin = false, JoinedAt = now.AddMonths(-4) },
+            new UserGroup
+                { UserId = users[2].Id, GroupId = groups[0].Id, IsAdmin = false, JoinedAt = now.AddMonths(-2) },
+
+            // Snorren Club Nederland  
+            new UserGroup
+                { UserId = users[1].Id, GroupId = groups[1].Id, IsAdmin = true, JoinedAt = now.AddMonths(-8) },
+            new UserGroup
+                { UserId = users[7].Id, GroupId = groups[1].Id, IsAdmin = false, JoinedAt = now.AddMonths(-3) },
+            new UserGroup
+                { UserId = users[11].Id, GroupId = groups[1].Id, IsAdmin = false, JoinedAt = now.AddMonths(-1) },
+
+            // Mysterieuze Fijnproevers
+            new UserGroup
+                { UserId = users[2].Id, GroupId = groups[2].Id, IsAdmin = true, JoinedAt = now.AddMonths(-5) },
+            new UserGroup
+                { UserId = users[5].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddMonths(-4) },
+            new UserGroup
+                { UserId = users[6].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-30) },
+            new UserGroup
+                { UserId = users[9].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+
+            // Nachtelijke Kaasrollers
+            new UserGroup
+                { UserId = users[5].Id, GroupId = groups[3].Id, IsAdmin = true, JoinedAt = now.AddMonths(-7) },
+            new UserGroup
+                { UserId = users[8].Id, GroupId = groups[3].Id, IsAdmin = false, JoinedAt = now.AddMonths(-2) },
+            new UserGroup
+                { UserId = users[0].Id, GroupId = groups[3].Id, IsAdmin = false, JoinedAt = now.AddDays(-45) },
+
+            // Geheime Agenten Vereniging
+            new UserGroup
+                { UserId = users[3].Id, GroupId = groups[4].Id, IsAdmin = true, JoinedAt = now.AddMonths(-9) },
+            new UserGroup
+                { UserId = users[8].Id, GroupId = groups[4].Id, IsAdmin = true, JoinedAt = now.AddMonths(-6) },
+            new UserGroup
+                { UserId = users[10].Id, GroupId = groups[4].Id, IsAdmin = false, JoinedAt = now.AddMonths(-3) },
+            new UserGroup
+                { UserId = users[1].Id, GroupId = groups[4].Id, IsAdmin = false, JoinedAt = now.AddDays(-20) },
+
+            // Creatieve Chaos Club
+            new UserGroup
+                { UserId = users[11].Id, GroupId = groups[5].Id, IsAdmin = true, JoinedAt = now.AddMonths(-10) },
+            new UserGroup
+                { UserId = users[7].Id, GroupId = groups[5].Id, IsAdmin = false, JoinedAt = now.AddMonths(-5) },
+
+        };
+        context.UserGroups.AddRange(userGroups);
         context.SaveChanges();
     }
 }

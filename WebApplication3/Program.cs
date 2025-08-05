@@ -73,16 +73,16 @@ public class Program
                 
             
             options.AddPolicy("CanReadGroups", policy =>
-                policy.RequireClaim("permissions", "CanReadGroups"));
+                policy.RequireClaim("permissions", "read:groups"));
 
             options.AddPolicy("CanCreateGroups", policy =>
-                policy.RequireClaim("permissions", "CanCreateGroups"));
+                policy.RequireClaim("permissions", "create:groups"));
 
             options.AddPolicy("CanUpdateGroups", policy =>
-                policy.RequireClaim("permissions", "CanUpdateGroups"));
+                policy.RequireClaim("permissions", "update:groups"));
 
             options.AddPolicy("CanDeleteGroups", policy =>
-                policy.RequireClaim("permissions", "CanDeleteGroups"));
+                policy.RequireClaim("permissions", "delete:groups"));
             
                 
         });        
