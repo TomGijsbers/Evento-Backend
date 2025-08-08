@@ -110,6 +110,28 @@ public class GroupController : ControllerBase
         await _context.SaveChangesAsync();
         return NoContent();
     }
+    
+    // DELETE api/group/{groupId}/members/me
+    [HttpDelete("{groupId}/members/me")]
+    [Authorize(Policy = "CanReadGroups")] // User only needs read access to leave a group
+    public async Task<IActionResult> LeaveMemberFromGroup(int groupId)
+    {
+        // Get current user ID from JWT claims
+        var userIdClaim = User.FindFirst("sub") ?? User.FindFirst("id");
+        if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+        {
+            return Unauthorized("User ID not found in token");
+        }
+
+        var userGroup = await _context.UserGroups
+            .FirstOrDefaultAsync(ug => ug.GroupId == groupId && ug.UserId == userId);
+
+        if (userGroup == null) return NotFound("You are not a member of this group");
+
+        _context.UserGroups.Remove(userGroup);
+        await _context.SaveChangesAsync();
+        return NoContent();
+    }
 
     // PUT api/group/{groupId}/members/{userId}/admin
     [HttpPut("{groupId}/members/{userId}/admin")]

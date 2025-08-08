@@ -142,7 +142,12 @@ public static class DbInitializer
             {
                 FirstName = "Willem", LastName = "Waanzin", Auth0Id = "auth0|crazyideas666",
                 Email = "gekkeplannen@example.com"
-            }
+            },
+            new User
+            {
+            FirstName = "TOM", LastName = "Sjakes", Auth0Id = "auth0|123456789",
+            Email = "tom@test.nl"
+        }
         };
 
         context.Users.AddRange(users);
@@ -539,6 +544,26 @@ context.SaveChanges();
                 { UserId = users[6].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-30) },
             new UserGroup
                 { UserId = users[9].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[12].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            /*
+            new UserGroup
+                { UserId = users[13].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[14].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[15].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[16].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[17].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[18].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[19].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[20].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+                */
 
             // Nachtelijke Kaasrollers
             new UserGroup
@@ -557,6 +582,26 @@ context.SaveChanges();
                 { UserId = users[10].Id, GroupId = groups[4].Id, IsAdmin = false, JoinedAt = now.AddMonths(-3) },
             new UserGroup
                 { UserId = users[1].Id, GroupId = groups[4].Id, IsAdmin = false, JoinedAt = now.AddDays(-20) },
+            new UserGroup
+                { UserId = users[12].Id, GroupId = groups[4].Id, IsAdmin = true, JoinedAt = now.AddDays(-20) },
+            /*
+            new UserGroup
+                { UserId = users[13].Id, GroupId = groups[2].Id, IsAdmin = true, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[14].Id, GroupId = groups[2].Id, IsAdmin = true, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[15].Id, GroupId = groups[2].Id, IsAdmin = true, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[16].Id, GroupId = groups[2].Id, IsAdmin = true, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[17].Id, GroupId = groups[2].Id, IsAdmin = true, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[18].Id, GroupId = groups[2].Id, IsAdmin = false, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[19].Id, GroupId = groups[2].Id, IsAdmin = true, JoinedAt = now.AddDays(-15) },
+            new UserGroup
+                { UserId = users[20].Id, GroupId = groups[2].Id, IsAdmin = true, JoinedAt = now.AddDays(-15) },
+                */
 
             // Creatieve Chaos Club
             new UserGroup
